@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dfa_teams",
+  "info": {
+    "singularName": "dfa-team",
+    "pluralName": "dfa-teams",
+    "displayName": "DFA_Team"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Head_Coach": {
+      "type": "string",
+      "required": true
+    },
+    "Assistant_Coach": {
+      "type": "string"
+    },
+    "Community": {
+      "type": "string",
+      "required": true
+    },
+    "Gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

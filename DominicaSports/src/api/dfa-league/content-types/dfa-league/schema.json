@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dfa_leagues",
+  "info": {
+    "singularName": "dfa-league",
+    "pluralName": "dfa-leagues",
+    "displayName": "DFA_League"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
