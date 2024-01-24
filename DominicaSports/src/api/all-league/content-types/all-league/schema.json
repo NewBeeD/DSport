@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "all_leagues",
+  "info": {
+    "singularName": "all-league",
+    "pluralName": "all-leagues",
+    "displayName": "All_League"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

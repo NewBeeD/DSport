@@ -4,7 +4,8 @@
   "info": {
     "singularName": "dfa-team",
     "pluralName": "dfa-teams",
-    "displayName": "DFA_Team"
+    "displayName": "DFA_Team",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,14 +35,20 @@
       ]
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "dfa_players": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dfa-player.dfa-player"
     }
   }
 }

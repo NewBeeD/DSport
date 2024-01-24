@@ -362,71 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiDfaLeagueDfaLeague extends Schema.CollectionType {
-  collectionName: 'dfa_leagues';
-  info: {
-    singularName: 'dfa-league';
-    pluralName: 'dfa-leagues';
-    displayName: 'DFA_League';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::dfa-league.dfa-league',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::dfa-league.dfa-league',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
-  collectionName: 'dfa_teams';
-  info: {
-    singularName: 'dfa-team';
-    pluralName: 'dfa-teams';
-    displayName: 'DFA_Team';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String & Attribute.Required;
-    Head_Coach: Attribute.String & Attribute.Required;
-    Assistant_Coach: Attribute.String;
-    Community: Attribute.String & Attribute.Required;
-    Gender: Attribute.Enumeration<['Male', 'Female']>;
-    Image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::dfa-team.dfa-team',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::dfa-team.dfa-team',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -833,6 +768,207 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAllLeagueAllLeague extends Schema.CollectionType {
+  collectionName: 'all_leagues';
+  info: {
+    singularName: 'all-league';
+    pluralName: 'all-leagues';
+    displayName: 'All_League';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::all-league.all-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::all-league.all-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiArticleArticle extends Schema.CollectionType {
+  collectionName: 'articles';
+  info: {
+    singularName: 'article';
+    pluralName: 'articles';
+    displayName: 'Article';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Article_Img: Attribute.Media;
+    Author: Attribute.String & Attribute.Required;
+    Body_Content: Attribute.Text & Attribute.Required;
+    all_league: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::all-league.all-league'
+    >;
+    dfa_player: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::dfa-player.dfa-player'
+    >;
+    dfa_team: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::dfa-team.dfa-team'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDfaLeagueDfaLeague extends Schema.CollectionType {
+  collectionName: 'dfa_leagues';
+  info: {
+    singularName: 'dfa-league';
+    pluralName: 'dfa-leagues';
+    displayName: 'DFA_League';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dfa-league.dfa-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dfa-league.dfa-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDfaPlayerDfaPlayer extends Schema.CollectionType {
+  collectionName: 'dfa_players';
+  info: {
+    singularName: 'dfa-player';
+    pluralName: 'dfa-players';
+    displayName: 'DFA_Player';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    First_Name: Attribute.String & Attribute.Required;
+    Last_Name: Attribute.String & Attribute.Required;
+    Age: Attribute.Integer & Attribute.Required;
+    Birth_Date: Attribute.Date & Attribute.Required;
+    Profile_Pic: Attribute.Media;
+    Goals: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Assists: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Position: Attribute.Enumeration<
+      ['GK', 'CB', 'LB', 'RB', 'CDM', 'CM', 'LW', 'RW', 'ST', 'CF']
+    > &
+      Attribute.Required;
+    Yellow_Cards: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
+    Red_Cards: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Gender: Attribute.Enumeration<['Male', 'Female']> & Attribute.Required;
+    dfa_team: Attribute.Relation<
+      'api::dfa-player.dfa-player',
+      'oneToOne',
+      'api::dfa-team.dfa-team'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dfa-player.dfa-player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dfa-player.dfa-player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
+  collectionName: 'dfa_teams';
+  info: {
+    singularName: 'dfa-team';
+    pluralName: 'dfa-teams';
+    displayName: 'DFA_Team';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Head_Coach: Attribute.String & Attribute.Required;
+    Assistant_Coach: Attribute.String;
+    Community: Attribute.String & Attribute.Required;
+    Gender: Attribute.Enumeration<['Male', 'Female']>;
+    Image: Attribute.Media;
+    dfa_players: Attribute.Relation<
+      'api::dfa-team.dfa-team',
+      'oneToMany',
+      'api::dfa-player.dfa-player'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dfa-team.dfa-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dfa-team.dfa-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -843,8 +979,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::dfa-league.dfa-league': ApiDfaLeagueDfaLeague;
-      'api::dfa-team.dfa-team': ApiDfaTeamDfaTeam;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -853,6 +987,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::all-league.all-league': ApiAllLeagueAllLeague;
+      'api::article.article': ApiArticleArticle;
+      'api::dfa-league.dfa-league': ApiDfaLeagueDfaLeague;
+      'api::dfa-player.dfa-player': ApiDfaPlayerDfaPlayer;
+      'api::dfa-team.dfa-team': ApiDfaTeamDfaTeam;
     }
   }
 }
