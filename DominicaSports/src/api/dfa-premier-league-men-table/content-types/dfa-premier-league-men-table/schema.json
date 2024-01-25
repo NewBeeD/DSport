@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dfa_premier_league_men_tables",
+  "info": {
+    "singularName": "dfa-premier-league-men-table",
+    "pluralName": "dfa-premier-league-men-tables",
+    "displayName": "DFA_Premier_League_Men_Table",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dfa_team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dfa-team.dfa-team"
+    },
+    "Played": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Won": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Drawn": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Lost": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "GF": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "GA": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    }
+  }
+}

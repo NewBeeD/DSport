@@ -928,6 +928,48 @@ export interface ApiDfaPlayerDfaPlayer extends Schema.CollectionType {
   };
 }
 
+export interface ApiDfaPremierLeagueMenTableDfaPremierLeagueMenTable
+  extends Schema.CollectionType {
+  collectionName: 'dfa_premier_league_men_tables';
+  info: {
+    singularName: 'dfa-premier-league-men-table';
+    pluralName: 'dfa-premier-league-men-tables';
+    displayName: 'DFA_Premier_League_Men_Table';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    dfa_team: Attribute.Relation<
+      'api::dfa-premier-league-men-table.dfa-premier-league-men-table',
+      'oneToOne',
+      'api::dfa-team.dfa-team'
+    >;
+    Played: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Won: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Drawn: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Lost: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    GF: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    GA: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dfa-premier-league-men-table.dfa-premier-league-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dfa-premier-league-men-table.dfa-premier-league-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
   collectionName: 'dfa_teams';
   info: {
@@ -969,6 +1011,90 @@ export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
   };
 }
 
+export interface ApiFixtureFixture extends Schema.CollectionType {
+  collectionName: 'fixtures';
+  info: {
+    singularName: 'fixture';
+    pluralName: 'fixtures';
+    displayName: 'Fixture';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Home_Team: Attribute.String & Attribute.Required;
+    Away_Team: Attribute.String & Attribute.Required;
+    Date: Attribute.DateTime & Attribute.Required;
+    Cancelled: Attribute.Enumeration<['Yes', 'No']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'No'>;
+    Home_Team_Score: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
+    Away_Team_Score: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
+    venue: Attribute.Relation<
+      'api::fixture.fixture',
+      'oneToOne',
+      'api::venue.venue'
+    >;
+    all_league: Attribute.Relation<
+      'api::fixture.fixture',
+      'oneToOne',
+      'api::all-league.all-league'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fixture.fixture',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::fixture.fixture',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiVenueVenue extends Schema.CollectionType {
+  collectionName: 'venues';
+  info: {
+    singularName: 'venue';
+    pluralName: 'venues';
+    displayName: 'Venue';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Location: Attribute.Enumeration<
+      ['Portsmouth', 'Dublanc', 'Stockfarm', 'Roseau']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::venue.venue',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::venue.venue',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -991,7 +1117,10 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::dfa-league.dfa-league': ApiDfaLeagueDfaLeague;
       'api::dfa-player.dfa-player': ApiDfaPlayerDfaPlayer;
+      'api::dfa-premier-league-men-table.dfa-premier-league-men-table': ApiDfaPremierLeagueMenTableDfaPremierLeagueMenTable;
       'api::dfa-team.dfa-team': ApiDfaTeamDfaTeam;
+      'api::fixture.fixture': ApiFixtureFixture;
+      'api::venue.venue': ApiVenueVenue;
     }
   }
 }
