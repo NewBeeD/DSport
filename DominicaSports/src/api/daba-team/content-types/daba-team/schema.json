@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daba_teams",
+  "info": {
+    "singularName": "daba-team",
+    "pluralName": "daba-teams",
+    "displayName": "DABA_Team"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Foundation_Year": {
+      "type": "date"
+    },
+    "Community": {
+      "type": "string",
+      "required": true
+    },
+    "Current_Coach": {
+      "type": "string",
+      "required": true
+    },
+    "Assistant_Coach": {
+      "type": "string"
+    },
+    "daba_players": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::daba-player.daba-player"
+    },
+    "daba_league": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::daba-league.daba-league"
+    }
+  }
+}

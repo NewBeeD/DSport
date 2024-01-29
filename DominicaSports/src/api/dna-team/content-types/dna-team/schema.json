@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dna_teams",
+  "info": {
+    "singularName": "dna-team",
+    "pluralName": "dna-teams",
+    "displayName": "DNA_Team"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Foundation_Year": {
+      "type": "date"
+    },
+    "Current_Coach": {
+      "type": "string",
+      "required": true
+    },
+    "Community": {
+      "type": "string",
+      "required": true
+    },
+    "dna_players": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dna-player.dna-player"
+    },
+    "dna_league": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dna-league.dna-league"
+    }
+  }
+}

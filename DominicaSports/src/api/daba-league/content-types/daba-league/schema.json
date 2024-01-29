@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daba_leagues",
+  "info": {
+    "singularName": "daba-league",
+    "pluralName": "daba-leagues",
+    "displayName": "DABA_League",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "daba_teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::daba-team.daba-team"
+    }
+  }
+}

@@ -847,6 +847,279 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiDabaLeagueDabaLeague extends Schema.CollectionType {
+  collectionName: 'daba_leagues';
+  info: {
+    singularName: 'daba-league';
+    pluralName: 'daba-leagues';
+    displayName: 'DABA_League';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    daba_teams: Attribute.Relation<
+      'api::daba-league.daba-league',
+      'oneToMany',
+      'api::daba-team.daba-team'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::daba-league.daba-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::daba-league.daba-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDabaPlayerDabaPlayer extends Schema.CollectionType {
+  collectionName: 'daba_players';
+  info: {
+    singularName: 'daba-player';
+    pluralName: 'daba-players';
+    displayName: 'DABA_Player';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Profile_Pic: Attribute.Media;
+    Birth_Date: Attribute.Date & Attribute.Required;
+    Height: Attribute.Decimal;
+    Weight: Attribute.Decimal;
+    Points: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Field_Goal_Percentage: Attribute.Decimal;
+    Three_Point_Percentage: Attribute.Decimal;
+    Free_Throw_Percentage: Attribute.Decimal;
+    Rebounds: Attribute.Integer;
+    Assists: Attribute.Integer;
+    Steals: Attribute.Integer;
+    Blocks: Attribute.Integer;
+    Turnovers: Attribute.Integer;
+    Personal_Fouls: Attribute.Integer;
+    daba_team: Attribute.Relation<
+      'api::daba-player.daba-player',
+      'oneToOne',
+      'api::daba-team.daba-team'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::daba-player.daba-player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::daba-player.daba-player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDabaTeamDabaTeam extends Schema.CollectionType {
+  collectionName: 'daba_teams';
+  info: {
+    singularName: 'daba-team';
+    pluralName: 'daba-teams';
+    displayName: 'DABA_Team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Foundation_Year: Attribute.Date;
+    Community: Attribute.String & Attribute.Required;
+    Current_Coach: Attribute.String & Attribute.Required;
+    Assistant_Coach: Attribute.String;
+    daba_players: Attribute.Relation<
+      'api::daba-team.daba-team',
+      'oneToMany',
+      'api::daba-player.daba-player'
+    >;
+    daba_league: Attribute.Relation<
+      'api::daba-team.daba-team',
+      'oneToOne',
+      'api::daba-league.daba-league'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::daba-team.daba-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::daba-team.daba-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDavaLeagueDavaLeague extends Schema.CollectionType {
+  collectionName: 'dava_leagues';
+  info: {
+    singularName: 'dava-league';
+    pluralName: 'dava-leagues';
+    displayName: 'DAVA_League';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    dava_teams: Attribute.Relation<
+      'api::dava-league.dava-league',
+      'oneToMany',
+      'api::dava-team.dava-team'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dava-league.dava-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dava-league.dava-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDavaPlayerDavaPlayer extends Schema.CollectionType {
+  collectionName: 'dava_players';
+  info: {
+    singularName: 'dava-player';
+    pluralName: 'dava-players';
+    displayName: 'DAVA_Player';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Birth_Date: Attribute.Date & Attribute.Required;
+    Height: Attribute.Decimal;
+    Weight: Attribute.Decimal;
+    Points: Attribute.Integer;
+    Kills: Attribute.Integer;
+    Attack_Percentage: Attribute.Decimal;
+    Assists: Attribute.Integer;
+    Service_Aces: Attribute.Integer;
+    Service_Errors: Attribute.Integer;
+    Reception_Errors: Attribute.Integer;
+    Digs: Attribute.Integer;
+    Blocks: Attribute.Integer;
+    Blocks_Solo: Attribute.Integer;
+    Block_Assists: Attribute.Integer;
+    Hitting_Efficiency: Attribute.Decimal;
+    Serve_Receive: Attribute.Integer;
+    Position: Attribute.Enumeration<
+      [
+        'SETTER',
+        'OUTSIDE HITTER',
+        'MIDDLE BLOCKER',
+        'OPPOSITE HITTER',
+        'LIBERO',
+        'DEFENSIVE SPECIALIST',
+        'SERVING SPECIALIST'
+      ]
+    >;
+    dava_team: Attribute.Relation<
+      'api::dava-player.dava-player',
+      'oneToOne',
+      'api::dava-team.dava-team'
+    >;
+    Profile_Pic: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dava-player.dava-player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dava-player.dava-player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDavaTeamDavaTeam extends Schema.CollectionType {
+  collectionName: 'dava_teams';
+  info: {
+    singularName: 'dava-team';
+    pluralName: 'dava-teams';
+    displayName: 'DAVA_Team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Foundation_Year: Attribute.Date;
+    Current_Coach: Attribute.String & Attribute.Required;
+    Community: Attribute.String & Attribute.Required;
+    dava_players: Attribute.Relation<
+      'api::dava-team.dava-team',
+      'oneToMany',
+      'api::dava-player.dava-player'
+    >;
+    dava_league: Attribute.Relation<
+      'api::dava-team.dava-team',
+      'oneToOne',
+      'api::dava-league.dava-league'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dava-team.dava-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dava-team.dava-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDfaLeagueDfaLeague extends Schema.CollectionType {
   collectionName: 'dfa_leagues';
   info: {
@@ -1011,6 +1284,136 @@ export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
   };
 }
 
+export interface ApiDnaLeagueDnaLeague extends Schema.CollectionType {
+  collectionName: 'dna_leagues';
+  info: {
+    singularName: 'dna-league';
+    pluralName: 'dna-leagues';
+    displayName: 'DNA_League';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dna-league.dna-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dna-league.dna-league',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDnaPlayerDnaPlayer extends Schema.CollectionType {
+  collectionName: 'dna_players';
+  info: {
+    singularName: 'dna-player';
+    pluralName: 'dna-players';
+    displayName: 'DNA_Player';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Profile_Pic: Attribute.Media;
+    Birth_Date: Attribute.Date;
+    Height: Attribute.Decimal;
+    Weight: Attribute.Decimal;
+    Position: Attribute.Enumeration<['GS', 'GA', 'WA', 'C', 'WD', 'GD', 'GK']> &
+      Attribute.Required;
+    Goals_Scored: Attribute.Integer;
+    Shooting_Accuracy: Attribute.Decimal;
+    Goal_Assits: Attribute.Integer;
+    Center_Pass_Receives: Attribute.Integer;
+    Interceptions: Attribute.Integer;
+    Deflections: Attribute.Integer;
+    Rebounds: Attribute.Integer;
+    Turnovers: Attribute.Integer;
+    Penalties: Attribute.Integer;
+    Feeds_Into_Circle: Attribute.Integer;
+    Assists: Attribute.Integer;
+    Gains: Attribute.Integer;
+    Center_Pass_Percentage: Attribute.Decimal;
+    Defensive_Three_Second_Violations: Attribute.Integer;
+    Goalkeeper_Defense_Rebounds: Attribute.Integer;
+    dna_team: Attribute.Relation<
+      'api::dna-player.dna-player',
+      'oneToOne',
+      'api::dna-team.dna-team'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dna-player.dna-player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dna-player.dna-player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDnaTeamDnaTeam extends Schema.CollectionType {
+  collectionName: 'dna_teams';
+  info: {
+    singularName: 'dna-team';
+    pluralName: 'dna-teams';
+    displayName: 'DNA_Team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Foundation_Year: Attribute.Date;
+    Current_Coach: Attribute.String & Attribute.Required;
+    Community: Attribute.String & Attribute.Required;
+    dna_players: Attribute.Relation<
+      'api::dna-team.dna-team',
+      'oneToMany',
+      'api::dna-player.dna-player'
+    >;
+    dna_league: Attribute.Relation<
+      'api::dna-team.dna-team',
+      'oneToOne',
+      'api::dna-league.dna-league'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dna-team.dna-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dna-team.dna-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFixtureFixture extends Schema.CollectionType {
   collectionName: 'fixtures';
   info: {
@@ -1115,10 +1518,19 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::all-league.all-league': ApiAllLeagueAllLeague;
       'api::article.article': ApiArticleArticle;
+      'api::daba-league.daba-league': ApiDabaLeagueDabaLeague;
+      'api::daba-player.daba-player': ApiDabaPlayerDabaPlayer;
+      'api::daba-team.daba-team': ApiDabaTeamDabaTeam;
+      'api::dava-league.dava-league': ApiDavaLeagueDavaLeague;
+      'api::dava-player.dava-player': ApiDavaPlayerDavaPlayer;
+      'api::dava-team.dava-team': ApiDavaTeamDavaTeam;
       'api::dfa-league.dfa-league': ApiDfaLeagueDfaLeague;
       'api::dfa-player.dfa-player': ApiDfaPlayerDfaPlayer;
       'api::dfa-premier-league-men-table.dfa-premier-league-men-table': ApiDfaPremierLeagueMenTableDfaPremierLeagueMenTable;
       'api::dfa-team.dfa-team': ApiDfaTeamDfaTeam;
+      'api::dna-league.dna-league': ApiDnaLeagueDnaLeague;
+      'api::dna-player.dna-player': ApiDnaPlayerDnaPlayer;
+      'api::dna-team.dna-team': ApiDnaTeamDnaTeam;
       'api::fixture.fixture': ApiFixtureFixture;
       'api::venue.venue': ApiVenueVenue;
     }

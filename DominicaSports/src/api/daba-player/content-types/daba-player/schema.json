@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daba_players",
+  "info": {
+    "singularName": "daba-player",
+    "pluralName": "daba-players",
+    "displayName": "DABA_Player",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Profile_Pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Birth_Date": {
+      "type": "date",
+      "required": true
+    },
+    "Height": {
+      "type": "decimal"
+    },
+    "Weight": {
+      "type": "decimal"
+    },
+    "Points": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Field_Goal_Percentage": {
+      "type": "decimal"
+    },
+    "Three_Point_Percentage": {
+      "type": "decimal"
+    },
+    "Free_Throw_Percentage": {
+      "type": "decimal"
+    },
+    "Rebounds": {
+      "type": "integer"
+    },
+    "Assists": {
+      "type": "integer"
+    },
+    "Steals": {
+      "type": "integer"
+    },
+    "Blocks": {
+      "type": "integer"
+    },
+    "Turnovers": {
+      "type": "integer"
+    },
+    "Personal_Fouls": {
+      "type": "integer"
+    },
+    "daba_team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::daba-team.daba-team"
+    }
+  }
+}

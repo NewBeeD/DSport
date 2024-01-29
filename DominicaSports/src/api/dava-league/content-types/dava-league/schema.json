@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dava_leagues",
+  "info": {
+    "singularName": "dava-league",
+    "pluralName": "dava-leagues",
+    "displayName": "DAVA_League",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "dava_teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dava-team.dava-team"
+    }
+  }
+}

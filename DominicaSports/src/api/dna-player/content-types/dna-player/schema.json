@@ -1,0 +1,103 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dna_players",
+  "info": {
+    "singularName": "dna-player",
+    "pluralName": "dna-players",
+    "displayName": "DNA_Player",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Profile_Pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Birth_Date": {
+      "type": "date"
+    },
+    "Height": {
+      "type": "decimal"
+    },
+    "Weight": {
+      "type": "decimal"
+    },
+    "Position": {
+      "type": "enumeration",
+      "enum": [
+        "GS",
+        "GA",
+        "WA",
+        "C",
+        "WD",
+        "GD",
+        "GK"
+      ],
+      "required": true
+    },
+    "Goals_Scored": {
+      "type": "integer"
+    },
+    "Shooting_Accuracy": {
+      "type": "decimal"
+    },
+    "Goal_Assits": {
+      "type": "integer"
+    },
+    "Center_Pass_Receives": {
+      "type": "integer"
+    },
+    "Interceptions": {
+      "type": "integer"
+    },
+    "Deflections": {
+      "type": "integer"
+    },
+    "Rebounds": {
+      "type": "integer"
+    },
+    "Turnovers": {
+      "type": "integer"
+    },
+    "Penalties": {
+      "type": "integer"
+    },
+    "Feeds_Into_Circle": {
+      "type": "integer"
+    },
+    "Assists": {
+      "type": "integer"
+    },
+    "Gains": {
+      "type": "integer"
+    },
+    "Center_Pass_Percentage": {
+      "type": "decimal"
+    },
+    "Defensive_Three_Second_Violations": {
+      "type": "integer"
+    },
+    "Goalkeeper_Defense_Rebounds": {
+      "type": "integer"
+    },
+    "dna_team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dna-team.dna-team"
+    }
+  }
+}
