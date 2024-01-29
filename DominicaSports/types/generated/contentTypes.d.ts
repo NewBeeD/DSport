@@ -829,6 +829,36 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'api::dfa-team.dfa-team'
     >;
+    daba_player: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::daba-player.daba-player'
+    >;
+    daba_team: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::daba-team.daba-team'
+    >;
+    dava_player: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::dava-player.dava-player'
+    >;
+    dava_team: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::dava-team.dava-team'
+    >;
+    dna_player: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::dna-player.dna-player'
+    >;
+    dna_team: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::dna-team.dna-team'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
