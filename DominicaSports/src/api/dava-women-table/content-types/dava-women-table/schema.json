@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dava_women_tables",
+  "info": {
+    "singularName": "dava-women-table",
+    "pluralName": "dava-women-tables",
+    "displayName": "DAVA_Women_Table"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dava_team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dava-team.dava-team"
+    },
+    "P": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "W": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "L": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Points": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "PD": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    }
+  }
+}

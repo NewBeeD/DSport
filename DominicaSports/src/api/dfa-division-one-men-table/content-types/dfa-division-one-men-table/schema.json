@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dfa_division_one_men_tables",
+  "info": {
+    "singularName": "dfa-division-one-men-table",
+    "pluralName": "dfa-division-one-men-tables",
+    "displayName": "DFA_Division_One_Men_Table"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dfa_team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dfa-team.dfa-team"
+    },
+    "Played": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Won": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "Drawn": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Lost": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "GF": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "GA": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    }
+  }
+}

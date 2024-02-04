@@ -877,6 +877,45 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiDabaDivisionOneMenTableDabaDivisionOneMenTable
+  extends Schema.CollectionType {
+  collectionName: 'daba_division_one_men_tables';
+  info: {
+    singularName: 'daba-division-one-men-table';
+    pluralName: 'daba-division-one-men-tables';
+    displayName: 'DABA_Division_One_Men_Table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    daba_team: Attribute.Relation<
+      'api::daba-division-one-men-table.daba-division-one-men-table',
+      'oneToOne',
+      'api::daba-team.daba-team'
+    >;
+    GP: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    W: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    L: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    P: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::daba-division-one-men-table.daba-division-one-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::daba-division-one-men-table.daba-division-one-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDabaLeagueDabaLeague extends Schema.CollectionType {
   collectionName: 'daba_leagues';
   info: {
@@ -963,6 +1002,45 @@ export interface ApiDabaPlayerDabaPlayer extends Schema.CollectionType {
   };
 }
 
+export interface ApiDabaPremierLeagueMenTableDabaPremierLeagueMenTable
+  extends Schema.CollectionType {
+  collectionName: 'daba_premier_league_men_tables';
+  info: {
+    singularName: 'daba-premier-league-men-table';
+    pluralName: 'daba-premier-league-men-tables';
+    displayName: 'DABA_Premier_League_Men_Table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    daba_team: Attribute.Relation<
+      'api::daba-premier-league-men-table.daba-premier-league-men-table',
+      'oneToOne',
+      'api::daba-team.daba-team'
+    >;
+    GP: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    w: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    L: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    P: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::daba-premier-league-men-table.daba-premier-league-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::daba-premier-league-men-table.daba-premier-league-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDabaTeamDabaTeam extends Schema.CollectionType {
   collectionName: 'daba_teams';
   info: {
@@ -1000,6 +1078,124 @@ export interface ApiDabaTeamDabaTeam extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::daba-team.daba-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDabaWomenTableDabaWomenTable extends Schema.CollectionType {
+  collectionName: 'daba_women_tables';
+  info: {
+    singularName: 'daba-women-table';
+    pluralName: 'daba-women-tables';
+    displayName: 'DABA_Women_Table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    daba_team: Attribute.Relation<
+      'api::daba-women-table.daba-women-table',
+      'oneToOne',
+      'api::daba-team.daba-team'
+    >;
+    GP: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    W: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    L: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    P: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::daba-women-table.daba-women-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::daba-women-table.daba-women-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDavaDivisionOneMenTableDavaDivisionOneMenTable
+  extends Schema.CollectionType {
+  collectionName: 'dava_division_one_men_tables';
+  info: {
+    singularName: 'dava-division-one-men-table';
+    pluralName: 'dava-division-one-men-tables';
+    displayName: 'DAVA_Division_One_Men_Table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    dava_team: Attribute.Relation<
+      'api::dava-division-one-men-table.dava-division-one-men-table',
+      'oneToOne',
+      'api::dava-team.dava-team'
+    >;
+    P: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    W: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    L: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Points: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    PD: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dava-division-one-men-table.dava-division-one-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dava-division-one-men-table.dava-division-one-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDavaDivisionTwoMenTableDavaDivisionTwoMenTable
+  extends Schema.CollectionType {
+  collectionName: 'dava_division_two_men_tables';
+  info: {
+    singularName: 'dava-division-two-men-table';
+    pluralName: 'dava-division-two-men-tables';
+    displayName: 'DAVA_Division_Two_Men_Table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    dava_team: Attribute.Relation<
+      'api::dava-division-two-men-table.dava-division-two-men-table',
+      'oneToOne',
+      'api::dava-team.dava-team'
+    >;
+    P: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    W: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    L: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Points: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    PD: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dava-division-two-men-table.dava-division-two-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dava-division-two-men-table.dava-division-two-men-table',
       'oneToOne',
       'admin::user'
     > &
@@ -1143,6 +1339,86 @@ export interface ApiDavaTeamDavaTeam extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::dava-team.dava-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDavaWomenTableDavaWomenTable extends Schema.CollectionType {
+  collectionName: 'dava_women_tables';
+  info: {
+    singularName: 'dava-women-table';
+    pluralName: 'dava-women-tables';
+    displayName: 'DAVA_Women_Table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    dava_team: Attribute.Relation<
+      'api::dava-women-table.dava-women-table',
+      'oneToOne',
+      'api::dava-team.dava-team'
+    >;
+    P: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    W: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    L: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Points: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    PD: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dava-women-table.dava-women-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dava-women-table.dava-women-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDfaDivisionOneMenTableDfaDivisionOneMenTable
+  extends Schema.CollectionType {
+  collectionName: 'dfa_division_one_men_tables';
+  info: {
+    singularName: 'dfa-division-one-men-table';
+    pluralName: 'dfa-division-one-men-tables';
+    displayName: 'DFA_Division_One_Men_Table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    dfa_team: Attribute.Relation<
+      'api::dfa-division-one-men-table.dfa-division-one-men-table',
+      'oneToOne',
+      'api::dfa-team.dfa-team'
+    >;
+    Played: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Won: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Drawn: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Lost: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    GF: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    GA: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dfa-division-one-men-table.dfa-division-one-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dfa-division-one-men-table.dfa-division-one-men-table',
       'oneToOne',
       'admin::user'
     > &
@@ -1307,6 +1583,46 @@ export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::dfa-team.dfa-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDfaWomenTableDfaWomenTable extends Schema.CollectionType {
+  collectionName: 'dfa_women_tables';
+  info: {
+    singularName: 'dfa-women-table';
+    pluralName: 'dfa-women-tables';
+    displayName: 'DFA_Women_Table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    dfa_team: Attribute.Relation<
+      'api::dfa-women-table.dfa-women-table',
+      'oneToOne',
+      'api::dfa-team.dfa-team'
+    >;
+    Played: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Won: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Drawn: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Lost: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    GF: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    GA: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dfa-women-table.dfa-women-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dfa-women-table.dfa-women-table',
       'oneToOne',
       'admin::user'
     > &
@@ -1548,16 +1864,24 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::all-league.all-league': ApiAllLeagueAllLeague;
       'api::article.article': ApiArticleArticle;
+      'api::daba-division-one-men-table.daba-division-one-men-table': ApiDabaDivisionOneMenTableDabaDivisionOneMenTable;
       'api::daba-league.daba-league': ApiDabaLeagueDabaLeague;
       'api::daba-player.daba-player': ApiDabaPlayerDabaPlayer;
+      'api::daba-premier-league-men-table.daba-premier-league-men-table': ApiDabaPremierLeagueMenTableDabaPremierLeagueMenTable;
       'api::daba-team.daba-team': ApiDabaTeamDabaTeam;
+      'api::daba-women-table.daba-women-table': ApiDabaWomenTableDabaWomenTable;
+      'api::dava-division-one-men-table.dava-division-one-men-table': ApiDavaDivisionOneMenTableDavaDivisionOneMenTable;
+      'api::dava-division-two-men-table.dava-division-two-men-table': ApiDavaDivisionTwoMenTableDavaDivisionTwoMenTable;
       'api::dava-league.dava-league': ApiDavaLeagueDavaLeague;
       'api::dava-player.dava-player': ApiDavaPlayerDavaPlayer;
       'api::dava-team.dava-team': ApiDavaTeamDavaTeam;
+      'api::dava-women-table.dava-women-table': ApiDavaWomenTableDavaWomenTable;
+      'api::dfa-division-one-men-table.dfa-division-one-men-table': ApiDfaDivisionOneMenTableDfaDivisionOneMenTable;
       'api::dfa-league.dfa-league': ApiDfaLeagueDfaLeague;
       'api::dfa-player.dfa-player': ApiDfaPlayerDfaPlayer;
       'api::dfa-premier-league-men-table.dfa-premier-league-men-table': ApiDfaPremierLeagueMenTableDfaPremierLeagueMenTable;
       'api::dfa-team.dfa-team': ApiDfaTeamDfaTeam;
+      'api::dfa-women-table.dfa-women-table': ApiDfaWomenTableDfaWomenTable;
       'api::dna-league.dna-league': ApiDnaLeagueDnaLeague;
       'api::dna-player.dna-player': ApiDnaPlayerDnaPlayer;
       'api::dna-team.dna-team': ApiDnaTeamDnaTeam;
