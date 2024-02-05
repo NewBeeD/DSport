@@ -79,6 +79,15 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::dna-team.dna-team"
+    },
+    "Headline": {
+      "type": "enumeration",
+      "enum": [
+        "Yes",
+        "No"
+      ],
+      "default": "No",
+      "required": true
     }
   }
 }

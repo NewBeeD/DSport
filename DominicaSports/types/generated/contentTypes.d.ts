@@ -859,6 +859,9 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'api::dna-team.dna-team'
     >;
+    Headline: Attribute.Enumeration<['Yes', 'No']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'No'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
