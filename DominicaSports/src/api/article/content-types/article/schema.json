@@ -88,6 +88,15 @@
       ],
       "default": "No",
       "required": true
+    },
+    "Page_Headline": {
+      "type": "enumeration",
+      "enum": [
+        "Yes",
+        "No"
+      ],
+      "required": true,
+      "default": "No"
     }
   }
 }

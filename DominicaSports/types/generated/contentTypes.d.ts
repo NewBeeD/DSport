@@ -862,6 +862,9 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     Headline: Attribute.Enumeration<['Yes', 'No']> &
       Attribute.Required &
       Attribute.DefaultTo<'No'>;
+    Page_Headline: Attribute.Enumeration<['Yes', 'No']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'No'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1847,6 +1850,37 @@ export interface ApiVenueVenue extends Schema.CollectionType {
   };
 }
 
+export interface ApiVideoVideo extends Schema.CollectionType {
+  collectionName: 'videos';
+  info: {
+    singularName: 'video';
+    pluralName: 'videos';
+    displayName: 'video';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Video: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::video.video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::video.video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1890,6 +1924,7 @@ declare module '@strapi/types' {
       'api::dna-team.dna-team': ApiDnaTeamDnaTeam;
       'api::fixture.fixture': ApiFixtureFixture;
       'api::venue.venue': ApiVenueVenue;
+      'api::video.video': ApiVideoVideo;
     }
   }
 }
