@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dfa_division_one_teams",
+  "info": {
+    "singularName": "dfa-division-one-team",
+    "pluralName": "dfa-division-one-teams",
+    "displayName": "DFA_Division_One_Team",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Head_coach": {
+      "type": "string",
+      "required": true
+    },
+    "Assistant_Coach": {
+      "type": "string"
+    },
+    "Community": {
+      "type": "string",
+      "required": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "dfa_players": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dfa-player.dfa-player"
+    },
+    "Group": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ]
+    }
+  }
+}

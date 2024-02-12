@@ -1398,6 +1398,7 @@ export interface ApiDfaDivisionOneMenTableDfaDivisionOneMenTable
     singularName: 'dfa-division-one-men-table';
     pluralName: 'dfa-division-one-men-tables';
     displayName: 'DFA_Division_One_Men_Table';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1425,6 +1426,48 @@ export interface ApiDfaDivisionOneMenTableDfaDivisionOneMenTable
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::dfa-division-one-men-table.dfa-division-one-men-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDfaDivisionOneTeamDfaDivisionOneTeam
+  extends Schema.CollectionType {
+  collectionName: 'dfa_division_one_teams';
+  info: {
+    singularName: 'dfa-division-one-team';
+    pluralName: 'dfa-division-one-teams';
+    displayName: 'DFA_Division_One_Team';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Head_coach: Attribute.String & Attribute.Required;
+    Assistant_Coach: Attribute.String;
+    Community: Attribute.String & Attribute.Required;
+    Image: Attribute.Media;
+    dfa_players: Attribute.Relation<
+      'api::dfa-division-one-team.dfa-division-one-team',
+      'oneToMany',
+      'api::dfa-player.dfa-player'
+    >;
+    Group: Attribute.Enumeration<['A', 'B', 'C', 'D', 'E']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dfa-division-one-team.dfa-division-one-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dfa-division-one-team.dfa-division-one-team',
       'oneToOne',
       'admin::user'
     > &
@@ -1629,6 +1672,45 @@ export interface ApiDfaWomenTableDfaWomenTable extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::dfa-women-table.dfa-women-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDfaWomenTeamDfaWomenTeam extends Schema.CollectionType {
+  collectionName: 'dfa_women_teams';
+  info: {
+    singularName: 'dfa-women-team';
+    pluralName: 'dfa-women-teams';
+    displayName: 'DFA_Women_Team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Head_Coach: Attribute.String & Attribute.Required;
+    Assistant_Coach: Attribute.String;
+    Community: Attribute.String & Attribute.Required;
+    Team_Img: Attribute.Media;
+    dfa_players: Attribute.Relation<
+      'api::dfa-women-team.dfa-women-team',
+      'oneToMany',
+      'api::dfa-player.dfa-player'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dfa-women-team.dfa-women-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dfa-women-team.dfa-women-team',
       'oneToOne',
       'admin::user'
     > &
@@ -1914,11 +1996,13 @@ declare module '@strapi/types' {
       'api::dava-team.dava-team': ApiDavaTeamDavaTeam;
       'api::dava-women-table.dava-women-table': ApiDavaWomenTableDavaWomenTable;
       'api::dfa-division-one-men-table.dfa-division-one-men-table': ApiDfaDivisionOneMenTableDfaDivisionOneMenTable;
+      'api::dfa-division-one-team.dfa-division-one-team': ApiDfaDivisionOneTeamDfaDivisionOneTeam;
       'api::dfa-league.dfa-league': ApiDfaLeagueDfaLeague;
       'api::dfa-player.dfa-player': ApiDfaPlayerDfaPlayer;
       'api::dfa-premier-league-men-table.dfa-premier-league-men-table': ApiDfaPremierLeagueMenTableDfaPremierLeagueMenTable;
       'api::dfa-team.dfa-team': ApiDfaTeamDfaTeam;
       'api::dfa-women-table.dfa-women-table': ApiDfaWomenTableDfaWomenTable;
+      'api::dfa-women-team.dfa-women-team': ApiDfaWomenTeamDfaWomenTeam;
       'api::dna-league.dna-league': ApiDnaLeagueDnaLeague;
       'api::dna-player.dna-player': ApiDnaPlayerDnaPlayer;
       'api::dna-team.dna-team': ApiDnaTeamDnaTeam;

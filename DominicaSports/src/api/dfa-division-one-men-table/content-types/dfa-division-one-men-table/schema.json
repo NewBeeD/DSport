@@ -4,7 +4,8 @@
   "info": {
     "singularName": "dfa-division-one-men-table",
     "pluralName": "dfa-division-one-men-tables",
-    "displayName": "DFA_Division_One_Men_Table"
+    "displayName": "DFA_Division_One_Men_Table",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

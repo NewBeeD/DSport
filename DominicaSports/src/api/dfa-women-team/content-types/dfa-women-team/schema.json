@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dfa_women_teams",
+  "info": {
+    "singularName": "dfa-women-team",
+    "pluralName": "dfa-women-teams",
+    "displayName": "DFA_Women_Team"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Head_Coach": {
+      "type": "string",
+      "required": true
+    },
+    "Assistant_Coach": {
+      "type": "string"
+    },
+    "Community": {
+      "type": "string",
+      "required": true
+    },
+    "Team_Img": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "dfa_players": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dfa-player.dfa-player"
+    }
+  }
+}
