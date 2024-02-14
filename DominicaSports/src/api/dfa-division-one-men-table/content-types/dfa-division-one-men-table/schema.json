@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "dfa_team": {
+    "dfa_division_one_team": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::dfa-team.dfa-team"
+      "target": "api::dfa-division-one-team.dfa-division-one-team"
     },
     "Played": {
       "type": "integer",

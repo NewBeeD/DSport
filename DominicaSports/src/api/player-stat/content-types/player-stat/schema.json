@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "player_stats",
+  "info": {
+    "singularName": "player-stat",
+    "pluralName": "player-stats",
+    "displayName": "Player_Stat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dfa_player": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dfa-player.dfa-player"
+    },
+    "Season": {
+      "type": "enumeration",
+      "enum": [
+        "a2016_2017",
+        "a2017_2018",
+        "a2018_2019",
+        "a2019_2020",
+        "a2020_2021",
+        "a2021_2022",
+        "a2022_2023",
+        "a2023_2024"
+      ],
+      "required": true
+    },
+    "dfa_team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dfa-team.dfa-team"
+    },
+    "Match_Played": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "Goals": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Assists": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "Yellow_Cards": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "Red_Cards": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    }
+  }
+}

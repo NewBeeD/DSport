@@ -4,7 +4,8 @@
   "info": {
     "singularName": "venue",
     "pluralName": "venues",
-    "displayName": "Venue"
+    "displayName": "Venue",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,7 +22,8 @@
         "Portsmouth",
         "Dublanc",
         "Stockfarm",
-        "Roseau"
+        "Roseau",
+        "Massacre"
       ]
     }
   }

@@ -84,6 +84,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::dfa-team.dfa-team"
+    },
+    "all_league": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::all-league.all-league"
     }
   }
 }
