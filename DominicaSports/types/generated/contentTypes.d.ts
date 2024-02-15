@@ -1911,6 +1911,7 @@ export interface ApiPlayerStatPlayerStat extends Schema.CollectionType {
     singularName: 'player-stat';
     pluralName: 'player-stats';
     displayName: 'Player_Stat';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1951,6 +1952,7 @@ export interface ApiPlayerStatPlayerStat extends Schema.CollectionType {
       'oneToOne',
       'api::dfa-team.dfa-team'
     >;
+    Profile_Pic: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

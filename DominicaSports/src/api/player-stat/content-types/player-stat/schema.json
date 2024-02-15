@@ -4,7 +4,8 @@
   "info": {
     "singularName": "player-stat",
     "pluralName": "player-stats",
-    "displayName": "Player_Stat"
+    "displayName": "Player_Stat",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -62,6 +63,13 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::dfa-team.dfa-team"
+    },
+    "Profile_Pic": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
