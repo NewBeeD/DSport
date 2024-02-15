@@ -4,12 +4,8 @@
   "info": {
     "singularName": "dfa-player-stat",
     "pluralName": "dfa-player-stats",
-<<<<<<< HEAD
     "displayName": "DFA_Player_Stat",
     "description": ""
-=======
-    "displayName": "DFA_Player_Stat"
->>>>>>> 596aed8cd819afcbcb91418234a55a8cf44f8b6b
   },
   "options": {
     "draftAndPublish": true
@@ -59,33 +55,22 @@
       "required": true
     },
     "Profile_Pic": {
-<<<<<<< HEAD
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"
       ]
-=======
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
->>>>>>> 596aed8cd819afcbcb91418234a55a8cf44f8b6b
     },
     "all_league": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::all-league.all-league"
-<<<<<<< HEAD
     },
     "dfa_team": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::dfa-team.dfa-team"
-=======
->>>>>>> 596aed8cd819afcbcb91418234a55a8cf44f8b6b
     }
   }
 }

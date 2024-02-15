@@ -2006,7 +2006,6 @@ declare module '@strapi/types' {
       'api::dfa-division-one-team.dfa-division-one-team': ApiDfaDivisionOneTeamDfaDivisionOneTeam;
       'api::dfa-league.dfa-league': ApiDfaLeagueDfaLeague;
       'api::dfa-player.dfa-player': ApiDfaPlayerDfaPlayer;
-      'api::dfa-player-stat.dfa-player-stat': ApiDfaPlayerStatDfaPlayerStat;
       'api::dfa-premier-league-men-table.dfa-premier-league-men-table': ApiDfaPremierLeagueMenTableDfaPremierLeagueMenTable;
       'api::dfa-team.dfa-team': ApiDfaTeamDfaTeam;
       'api::dfa-women-table.dfa-women-table': ApiDfaWomenTableDfaWomenTable;
