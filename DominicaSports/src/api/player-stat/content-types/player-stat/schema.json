@@ -65,11 +65,17 @@
       "target": "api::dfa-team.dfa-team"
     },
     "Profile_Pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Clean_Sheets": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     }
   }
 }

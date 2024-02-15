@@ -1953,6 +1953,9 @@ export interface ApiPlayerStatPlayerStat extends Schema.CollectionType {
       'api::dfa-team.dfa-team'
     >;
     Profile_Pic: Attribute.Media;
+    Clean_Sheets: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
