@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dfa_player_stats",
+  "info": {
+    "singularName": "dfa-player-stat",
+    "pluralName": "dfa-player-stats",
+    "displayName": "DFA_Player_Stat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dfa_player": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dfa-player.dfa-player"
+    },
+    "Season": {
+      "type": "enumeration",
+      "enum": [
+        "a2019-2020",
+        "a2020-2021",
+        "a2021-2022",
+        "a2022-2023",
+        "a2023-2024",
+        "a2024-2025"
+      ],
+      "required": true
+    },
+    "Matches_Played": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "Goals": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "Assists": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Yellow_Cards": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "Red_Cards": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "Profile_Pic": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "all_league": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::all-league.all-league"
+    }
+  }
+}

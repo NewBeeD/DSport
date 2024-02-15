@@ -1561,6 +1561,66 @@ export interface ApiDfaPlayerDfaPlayer extends Schema.CollectionType {
   };
 }
 
+export interface ApiDfaPlayerStatDfaPlayerStat extends Schema.CollectionType {
+  collectionName: 'dfa_player_stats';
+  info: {
+    singularName: 'dfa-player-stat';
+    pluralName: 'dfa-player-stats';
+    displayName: 'DFA_Player_Stat';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    dfa_player: Attribute.Relation<
+      'api::dfa-player-stat.dfa-player-stat',
+      'oneToOne',
+      'api::dfa-player.dfa-player'
+    >;
+    Season: Attribute.Enumeration<
+      [
+        'a2019-2020',
+        'a2020-2021',
+        'a2021-2022',
+        'a2022-2023',
+        'a2023-2024',
+        'a2024-2025'
+      ]
+    > &
+      Attribute.Required;
+    Matches_Played: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
+    Goals: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Assists: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Yellow_Cards: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
+    Red_Cards: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Profile_Pic: Attribute.Media;
+    all_league: Attribute.Relation<
+      'api::dfa-player-stat.dfa-player-stat',
+      'oneToOne',
+      'api::all-league.all-league'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dfa-player-stat.dfa-player-stat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dfa-player-stat.dfa-player-stat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDfaPremierLeagueMenTableDfaPremierLeagueMenTable
   extends Schema.CollectionType {
   collectionName: 'dfa_premier_league_men_tables';
@@ -2006,6 +2066,7 @@ declare module '@strapi/types' {
       'api::dfa-division-one-team.dfa-division-one-team': ApiDfaDivisionOneTeamDfaDivisionOneTeam;
       'api::dfa-league.dfa-league': ApiDfaLeagueDfaLeague;
       'api::dfa-player.dfa-player': ApiDfaPlayerDfaPlayer;
+      'api::dfa-player-stat.dfa-player-stat': ApiDfaPlayerStatDfaPlayerStat;
       'api::dfa-premier-league-men-table.dfa-premier-league-men-table': ApiDfaPremierLeagueMenTableDfaPremierLeagueMenTable;
       'api::dfa-team.dfa-team': ApiDfaTeamDfaTeam;
       'api::dfa-women-table.dfa-women-table': ApiDfaWomenTableDfaWomenTable;
