@@ -1905,67 +1905,6 @@ export interface ApiFixtureFixture extends Schema.CollectionType {
   };
 }
 
-export interface ApiPlayerStatPlayerStat extends Schema.CollectionType {
-  collectionName: 'player_stats';
-  info: {
-    singularName: 'player-stat';
-    pluralName: 'player-stats';
-    displayName: 'Player_Stat';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    dfa_player: Attribute.Relation<
-      'api::player-stat.player-stat',
-      'oneToOne',
-      'api::dfa-player.dfa-player'
-    >;
-    Season: Attribute.Enumeration<
-      [
-        'a2016_2017',
-        'a2017_2018',
-        'a2018_2019',
-        'a2019_2020',
-        'a2020_2021',
-        'a2021_2022',
-        'a2022_2023',
-        'a2023_2024'
-      ]
-    > &
-      Attribute.Required;
-    dfa_team: Attribute.Relation<
-      'api::player-stat.player-stat',
-      'oneToOne',
-      'api::dfa-team.dfa-team'
-    >;
-    Match_Played: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<0>;
-    Goals: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
-    Assists: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
-    Yellow_Cards: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<0>;
-    Red_Cards: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::player-stat.player-stat',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::player-stat.player-stat',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiVenueVenue extends Schema.CollectionType {
   collectionName: 'venues';
   info: {
@@ -2075,7 +2014,6 @@ declare module '@strapi/types' {
       'api::dna-player.dna-player': ApiDnaPlayerDnaPlayer;
       'api::dna-team.dna-team': ApiDnaTeamDnaTeam;
       'api::fixture.fixture': ApiFixtureFixture;
-      'api::player-stat.player-stat': ApiPlayerStatPlayerStat;
       'api::venue.venue': ApiVenueVenue;
       'api::video.video': ApiVideoVideo;
     }
