@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "dfa_player_stats",
+  "collectionName": "player_stats",
   "info": {
-    "singularName": "dfa-player-stat",
-    "pluralName": "dfa-player-stats",
-    "displayName": "DFA_Player_Stat",
-    "description": ""
+    "singularName": "player-stat",
+    "pluralName": "player-stats",
+    "displayName": "Player_Stat"
   },
   "options": {
     "draftAndPublish": true
@@ -20,11 +19,11 @@
     "Season": {
       "type": "enumeration",
       "enum": [
+        "a2018-2019",
         "a2019-2020",
         "a2020-2021",
         "a2021-2022",
         "a2022-2023",
-        "a2023-2024",
         "a2024-2025"
       ],
       "required": true
@@ -46,21 +45,13 @@
     },
     "Yellow_Cards": {
       "type": "integer",
-      "default": 0,
-      "required": true
+      "required": true,
+      "default": 0
     },
     "Red_Cards": {
       "type": "integer",
-      "default": 0,
-      "required": true
-    },
-    "Profile_Pic": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "required": true,
+      "default": 0
     },
     "all_league": {
       "type": "relation",
