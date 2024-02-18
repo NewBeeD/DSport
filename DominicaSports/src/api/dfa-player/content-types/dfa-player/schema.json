@@ -89,6 +89,20 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::all-league.all-league"
+    },
+    "Height_cm": {
+      "type": "decimal"
+    },
+    "Weight_kgs": {
+      "type": "decimal"
+    },
+    "Foot": {
+      "type": "enumeration",
+      "enum": [
+        "Right",
+        "Left"
+      ],
+      "required": true
     }
   }
 }

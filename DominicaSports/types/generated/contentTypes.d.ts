@@ -1543,6 +1543,9 @@ export interface ApiDfaPlayerDfaPlayer extends Schema.CollectionType {
       'oneToOne',
       'api::all-league.all-league'
     >;
+    Height_cm: Attribute.Decimal;
+    Weight_kgs: Attribute.Decimal;
+    Foot: Attribute.Enumeration<['Right', 'Left']> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
