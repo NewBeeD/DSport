@@ -103,6 +103,11 @@
         "Left"
       ],
       "required": true
+    },
+    "Appearances": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     }
   }
 }

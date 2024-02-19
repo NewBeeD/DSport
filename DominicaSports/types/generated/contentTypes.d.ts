@@ -1546,6 +1546,9 @@ export interface ApiDfaPlayerDfaPlayer extends Schema.CollectionType {
     Height_cm: Attribute.Decimal;
     Weight_kgs: Attribute.Decimal;
     Foot: Attribute.Enumeration<['Right', 'Left']> & Attribute.Required;
+    Appearances: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
