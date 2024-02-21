@@ -1866,6 +1866,7 @@ export interface ApiFixtureFixture extends Schema.CollectionType {
     singularName: 'fixture';
     pluralName: 'fixtures';
     displayName: 'Fixture';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1893,6 +1894,9 @@ export interface ApiFixtureFixture extends Schema.CollectionType {
       'oneToOne',
       'api::all-league.all-league'
     >;
+    Complete: Attribute.Enumeration<['Yes', 'No']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'No'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

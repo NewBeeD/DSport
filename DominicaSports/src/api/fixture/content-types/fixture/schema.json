@@ -4,7 +4,8 @@
   "info": {
     "singularName": "fixture",
     "pluralName": "fixtures",
-    "displayName": "Fixture"
+    "displayName": "Fixture",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -51,6 +52,15 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::all-league.all-league"
+    },
+    "Complete": {
+      "type": "enumeration",
+      "enum": [
+        "Yes",
+        "No"
+      ],
+      "default": "No",
+      "required": true
     }
   }
 }
