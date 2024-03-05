@@ -1549,6 +1549,7 @@ export interface ApiDfaPlayerDfaPlayer extends Schema.CollectionType {
     Appearances: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<0>;
+    Kit_Number: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2024,13 +2025,17 @@ export interface ApiVideoVideo extends Schema.CollectionType {
     singularName: 'video';
     pluralName: 'videos';
     displayName: 'video';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String & Attribute.Required;
-    Video: Attribute.Media & Attribute.Required;
+    VideoId: Attribute.String & Attribute.Required;
+    Page_Location: Attribute.Enumeration<
+      ['Homepage1', 'Homepage2', 'Homepage3', 'Dfa1', 'Dfa2', 'Dfa3']
+    > &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

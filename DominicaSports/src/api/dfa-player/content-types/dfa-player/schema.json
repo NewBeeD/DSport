@@ -108,6 +108,9 @@
       "type": "integer",
       "required": true,
       "default": 0
+    },
+    "Kit_Number": {
+      "type": "integer"
     }
   }
 }

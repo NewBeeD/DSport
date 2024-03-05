@@ -4,23 +4,28 @@
   "info": {
     "singularName": "video",
     "pluralName": "videos",
-    "displayName": "video"
+    "displayName": "video",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "VideoId": {
       "type": "string",
       "required": true
     },
-    "Video": {
-      "allowedTypes": [
-        "videos"
+    "Page_Location": {
+      "type": "enumeration",
+      "enum": [
+        "Homepage1",
+        "Homepage2",
+        "Homepage3",
+        "Dfa1",
+        "Dfa2",
+        "Dfa3"
       ],
-      "type": "media",
-      "multiple": false,
       "required": true
     }
   }
