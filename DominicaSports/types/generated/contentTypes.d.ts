@@ -883,6 +883,43 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiCommentComment extends Schema.CollectionType {
+  collectionName: 'comments';
+  info: {
+    singularName: 'comment';
+    pluralName: 'comments';
+    displayName: 'comment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Author: Attribute.String & Attribute.Required;
+    content: Attribute.Text & Attribute.Required;
+    article: Attribute.Relation<
+      'api::comment.comment',
+      'oneToOne',
+      'api::article.article'
+    >;
+    reaction: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::comment.comment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::comment.comment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDabaDivisionOneMenTableDabaDivisionOneMenTable
   extends Schema.CollectionType {
   collectionName: 'daba_division_one_men_tables';
@@ -2074,6 +2111,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::all-league.all-league': ApiAllLeagueAllLeague;
       'api::article.article': ApiArticleArticle;
+      'api::comment.comment': ApiCommentComment;
       'api::daba-division-one-men-table.daba-division-one-men-table': ApiDabaDivisionOneMenTableDabaDivisionOneMenTable;
       'api::daba-league.daba-league': ApiDabaLeagueDabaLeague;
       'api::daba-player.daba-player': ApiDabaPlayerDabaPlayer;
