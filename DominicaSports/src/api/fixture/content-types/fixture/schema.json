@@ -35,13 +35,11 @@
     },
     "Home_Team_Score": {
       "type": "integer",
-      "required": true,
-      "default": 0
+      "required": false
     },
     "Away_Team_Score": {
       "type": "integer",
-      "required": true,
-      "default": 0
+      "required": false
     },
     "venue": {
       "type": "relation",

@@ -1916,12 +1916,8 @@ export interface ApiFixtureFixture extends Schema.CollectionType {
     Cancelled: Attribute.Enumeration<['Yes', 'No']> &
       Attribute.Required &
       Attribute.DefaultTo<'No'>;
-    Home_Team_Score: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<0>;
-    Away_Team_Score: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<0>;
+    Home_Team_Score: Attribute.Integer;
+    Away_Team_Score: Attribute.Integer;
     venue: Attribute.Relation<
       'api::fixture.fixture',
       'oneToOne',
