@@ -1670,6 +1670,11 @@ export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
       'oneToMany',
       'api::dfa-player.dfa-player'
     >;
+    dfa_league: Attribute.Relation<
+      'api::dfa-team.dfa-team',
+      'oneToOne',
+      'api::dfa-league.dfa-league'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

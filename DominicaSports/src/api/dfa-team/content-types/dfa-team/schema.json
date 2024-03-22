@@ -49,6 +49,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::dfa-player.dfa-player"
+    },
+    "dfa_league": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dfa-league.dfa-league"
     }
   }
 }
