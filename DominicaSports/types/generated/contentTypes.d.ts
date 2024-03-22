@@ -1676,6 +1676,7 @@ export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
       'api::dfa-league.dfa-league'
     >;
     Staff: Attribute.Media;
+    Team_Photo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

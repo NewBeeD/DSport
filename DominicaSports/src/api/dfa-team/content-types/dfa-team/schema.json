@@ -56,11 +56,22 @@
       "target": "api::dfa-league.dfa-league"
     },
     "Staff": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
+      ]
+    },
+    "Team_Photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }
