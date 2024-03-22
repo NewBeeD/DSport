@@ -34,7 +34,7 @@
         "Female"
       ]
     },
-    "Image": {
+    "Team_Crest": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -54,6 +54,13 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::dfa-league.dfa-league"
+    },
+    "Staff": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

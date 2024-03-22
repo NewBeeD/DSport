@@ -1664,7 +1664,7 @@ export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
     Assistant_Coach: Attribute.String;
     Community: Attribute.String & Attribute.Required;
     Gender: Attribute.Enumeration<['Male', 'Female']>;
-    Image: Attribute.Media;
+    Team_Crest: Attribute.Media;
     dfa_players: Attribute.Relation<
       'api::dfa-team.dfa-team',
       'oneToMany',
@@ -1675,6 +1675,7 @@ export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
       'oneToOne',
       'api::dfa-league.dfa-league'
     >;
+    Staff: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
