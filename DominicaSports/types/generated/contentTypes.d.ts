@@ -1939,6 +1939,7 @@ export interface ApiFixtureFixture extends Schema.CollectionType {
     Complete: Attribute.Enumeration<['Yes', 'No']> &
       Attribute.Required &
       Attribute.DefaultTo<'No'>;
+    Game_Details: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
