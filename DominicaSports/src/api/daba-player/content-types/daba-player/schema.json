@@ -77,6 +77,14 @@
     "Last_Name": {
       "type": "string",
       "required": true
+    },
+    "Gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ],
+      "required": true
     }
   }
 }
