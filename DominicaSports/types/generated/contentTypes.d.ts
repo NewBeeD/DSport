@@ -1007,7 +1007,6 @@ export interface ApiDabaPlayerDabaPlayer extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String & Attribute.Required;
     Profile_Pic: Attribute.Media;
     Birth_Date: Attribute.Date & Attribute.Required;
     Height: Attribute.Decimal;
@@ -1027,6 +1026,8 @@ export interface ApiDabaPlayerDabaPlayer extends Schema.CollectionType {
       'oneToOne',
       'api::daba-team.daba-team'
     >;
+    First_Name: Attribute.String & Attribute.Required;
+    Last_Name: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

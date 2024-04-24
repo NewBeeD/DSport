@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
-      "type": "string",
-      "required": true
-    },
     "Profile_Pic": {
       "type": "media",
       "multiple": false,
@@ -73,6 +69,14 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::daba-team.daba-team"
+    },
+    "First_Name": {
+      "type": "string",
+      "required": true
+    },
+    "Last_Name": {
+      "type": "string",
+      "required": true
     }
   }
 }
