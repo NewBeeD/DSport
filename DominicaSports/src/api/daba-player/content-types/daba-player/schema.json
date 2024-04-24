@@ -84,7 +84,8 @@
         "Male",
         "Female"
       ],
-      "required": true
+      "required": true,
+      "default": "Male"
     }
   }
 }

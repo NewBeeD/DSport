@@ -1028,7 +1028,9 @@ export interface ApiDabaPlayerDabaPlayer extends Schema.CollectionType {
     >;
     First_Name: Attribute.String & Attribute.Required;
     Last_Name: Attribute.String & Attribute.Required;
-    Gender: Attribute.Enumeration<['Male', 'Female']> & Attribute.Required;
+    Gender: Attribute.Enumeration<['Male', 'Female']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Male'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
