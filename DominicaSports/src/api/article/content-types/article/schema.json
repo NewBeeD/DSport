@@ -95,7 +95,7 @@
       "default": "No"
     },
     "Body_Content": {
-      "type": "string",
+      "type": "text",
       "required": true
     }
   }

@@ -864,7 +864,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     Page_Headline: Attribute.Enumeration<['Yes', 'No']> &
       Attribute.Required &
       Attribute.DefaultTo<'No'>;
-    Body_Content: Attribute.String & Attribute.Required;
+    Body_Content: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
