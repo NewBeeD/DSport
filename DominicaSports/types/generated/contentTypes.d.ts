@@ -813,7 +813,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     Title: Attribute.String & Attribute.Required;
     Article_Img: Attribute.Media;
     Author: Attribute.String & Attribute.Required;
-    Body_Content: Attribute.Text & Attribute.Required;
     all_league: Attribute.Relation<
       'api::article.article',
       'oneToOne',
@@ -865,6 +864,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     Page_Headline: Attribute.Enumeration<['Yes', 'No']> &
       Attribute.Required &
       Attribute.DefaultTo<'No'>;
+    Body_Content: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1031,6 +1031,11 @@ export interface ApiDabaPlayerDabaPlayer extends Schema.CollectionType {
     Gender: Attribute.Enumeration<['Male', 'Female']> &
       Attribute.Required &
       Attribute.DefaultTo<'Male'>;
+    all_league: Attribute.Relation<
+      'api::daba-player.daba-player',
+      'oneToOne',
+      'api::all-league.all-league'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

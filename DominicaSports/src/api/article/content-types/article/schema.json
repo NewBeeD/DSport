@@ -31,10 +31,6 @@
       "type": "string",
       "required": true
     },
-    "Body_Content": {
-      "type": "text",
-      "required": true
-    },
     "all_league": {
       "type": "relation",
       "relation": "oneToOne",
@@ -97,6 +93,10 @@
       ],
       "required": true,
       "default": "No"
+    },
+    "Body_Content": {
+      "type": "string",
+      "required": true
     }
   }
 }
