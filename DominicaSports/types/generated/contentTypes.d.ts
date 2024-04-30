@@ -1036,6 +1036,16 @@ export interface ApiDabaPlayerDabaPlayer extends Schema.CollectionType {
       'oneToOne',
       'api::all-league.all-league'
     >;
+    Position: Attribute.Enumeration<
+      [
+        'Point Guard',
+        'Shooting Guard',
+        'Small Forward',
+        'Power Forward',
+        'Center'
+      ]
+    > &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

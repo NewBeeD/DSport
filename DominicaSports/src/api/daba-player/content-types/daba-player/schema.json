@@ -91,6 +91,17 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::all-league.all-league"
+    },
+    "Position": {
+      "type": "enumeration",
+      "enum": [
+        "Point Guard",
+        "Shooting Guard",
+        "Small Forward",
+        "Power Forward",
+        "Center"
+      ],
+      "required": true
     }
   }
 }
