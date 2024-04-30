@@ -1046,6 +1046,9 @@ export interface ApiDabaPlayerDabaPlayer extends Schema.CollectionType {
       ]
     > &
       Attribute.Required;
+    Games_Played: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

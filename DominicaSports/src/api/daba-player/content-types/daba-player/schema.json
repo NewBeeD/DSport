@@ -102,6 +102,11 @@
         "Center"
       ],
       "required": true
+    },
+    "Games_Played": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     }
   }
 }
