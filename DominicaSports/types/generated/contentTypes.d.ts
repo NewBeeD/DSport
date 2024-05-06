@@ -1463,11 +1463,6 @@ export interface ApiDfaDivisionOneMenTableDfaDivisionOneMenTable
     draftAndPublish: true;
   };
   attributes: {
-    dfa_division_one_team: Attribute.Relation<
-      'api::dfa-division-one-men-table.dfa-division-one-men-table',
-      'oneToOne',
-      'api::dfa-division-one-team.dfa-division-one-team'
-    >;
     Played: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     Won: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     Drawn: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
@@ -1475,6 +1470,11 @@ export interface ApiDfaDivisionOneMenTableDfaDivisionOneMenTable
     GF: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     GA: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     Group: Attribute.Enumeration<['A', 'B', 'C', 'D']> & Attribute.Required;
+    dfa_team: Attribute.Relation<
+      'api::dfa-division-one-men-table.dfa-division-one-men-table',
+      'oneToOne',
+      'api::dfa-team.dfa-team'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

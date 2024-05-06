@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "dfa_division_one_team": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::dfa-division-one-team.dfa-division-one-team"
-    },
     "Played": {
       "type": "integer",
       "required": true,
@@ -56,6 +51,11 @@
         "D"
       ],
       "required": true
+    },
+    "dfa_team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dfa-team.dfa-team"
     }
   }
 }
