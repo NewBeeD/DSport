@@ -46,6 +46,16 @@
       "type": "integer",
       "required": true,
       "default": 0
+    },
+    "Group": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "required": true
     }
   }
 }

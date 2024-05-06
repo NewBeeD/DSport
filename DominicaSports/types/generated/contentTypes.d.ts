@@ -1474,6 +1474,7 @@ export interface ApiDfaDivisionOneMenTableDfaDivisionOneMenTable
     Lost: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     GF: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     GA: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    Group: Attribute.Enumeration<['A', 'B', 'C', 'D']> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
