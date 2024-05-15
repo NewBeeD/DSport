@@ -2064,7 +2064,7 @@ export interface ApiVenueVenue extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String & Attribute.Required;
     Location: Attribute.Enumeration<
-      ['Portsmouth', 'Dublanc', 'Stockfarm', 'Roseau', 'Massacre']
+      ['Portsmouth', 'Dublanc', 'Stockfarm', 'Roseau', 'Massacre', 'Laplaine']
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
