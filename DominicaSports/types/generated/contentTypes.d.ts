@@ -865,6 +865,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<'No'>;
     Body_Content: Attribute.Text & Attribute.Required;
+    RichText: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

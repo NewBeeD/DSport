@@ -97,6 +97,10 @@
     "Body_Content": {
       "type": "text",
       "required": true
+    },
+    "RichText": {
+      "type": "blocks",
+      "required": false
     }
   }
 }
