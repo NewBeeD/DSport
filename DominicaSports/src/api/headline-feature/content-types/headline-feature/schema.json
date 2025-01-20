@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "headline_features",
+  "info": {
+    "singularName": "headline-feature",
+    "pluralName": "headline-features",
+    "displayName": "HeadlineFeature"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "CardImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "HeadlineContent": {
+      "type": "blocks",
+      "required": true
+    },
+    "Author": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "News",
+        "Talking Tactics",
+        "Feature",
+        "Video",
+        "Report",
+        "Transfers",
+        "Club News",
+        "Beyond the Arena"
+      ],
+      "default": "News",
+      "required": true
+    },
+    "Headline": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

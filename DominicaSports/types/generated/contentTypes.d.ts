@@ -1997,6 +1997,57 @@ export interface ApiFixtureFixture extends Schema.CollectionType {
   };
 }
 
+export interface ApiHeadlineFeatureHeadlineFeature
+  extends Schema.CollectionType {
+  collectionName: 'headline_features';
+  info: {
+    singularName: 'headline-feature';
+    pluralName: 'headline-features';
+    displayName: 'HeadlineFeature';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    CardImage: Attribute.Media & Attribute.Required;
+    HeadlineContent: Attribute.Blocks & Attribute.Required;
+    Author: Attribute.String;
+    Type: Attribute.Enumeration<
+      [
+        'News',
+        'Talking Tactics',
+        'Feature',
+        'Video',
+        'Report',
+        'Transfers',
+        'Club News',
+        'Beyond the Arena'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'News'>;
+    Headline: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::headline-feature.headline-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::headline-feature.headline-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPlayerStatPlayerStat extends Schema.CollectionType {
   collectionName: 'player_stats';
   info: {
@@ -2180,6 +2231,7 @@ declare module '@strapi/types' {
       'api::dna-player.dna-player': ApiDnaPlayerDnaPlayer;
       'api::dna-team.dna-team': ApiDnaTeamDnaTeam;
       'api::fixture.fixture': ApiFixtureFixture;
+      'api::headline-feature.headline-feature': ApiHeadlineFeatureHeadlineFeature;
       'api::player-stat.player-stat': ApiPlayerStatPlayerStat;
       'api::venue.venue': ApiVenueVenue;
       'api::video.video': ApiVideoVideo;
