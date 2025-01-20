@@ -77,6 +77,9 @@
     "Founded": {
       "type": "date",
       "required": true
+    },
+    "History": {
+      "type": "blocks"
     }
   }
 }

@@ -866,6 +866,20 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.DefaultTo<'No'>;
     Body_Content: Attribute.Text & Attribute.Required;
     RichText: Attribute.Blocks;
+    Type: Attribute.Enumeration<
+      [
+        'News',
+        'Talking Tactics',
+        'Feature',
+        'Video',
+        'Report',
+        'Transfers',
+        'Club News',
+        'Beyond the Field'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'News'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1702,6 +1716,7 @@ export interface ApiDfaTeamDfaTeam extends Schema.CollectionType {
     Staff: Attribute.Media;
     Team_Photo: Attribute.Media;
     Founded: Attribute.Date & Attribute.Required;
+    History: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
