@@ -2085,17 +2085,6 @@ export interface ApiPlayerStatPlayerStat extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<0>;
     Red_Cards: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
-    all_league: Attribute.Relation<
-      'api::player-stat.player-stat',
-      'oneToOne',
-      'api::all-league.all-league'
-    >;
-    dfa_team: Attribute.Relation<
-      'api::player-stat.player-stat',
-      'oneToOne',
-      'api::dfa-team.dfa-team'
-    >;
-    Profile_Pic: Attribute.Media;
     Clean_Sheets: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<0>;

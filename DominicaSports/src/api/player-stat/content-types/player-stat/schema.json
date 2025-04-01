@@ -54,24 +54,6 @@
       "required": true,
       "default": 0
     },
-    "all_league": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::all-league.all-league"
-    },
-    "dfa_team": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::dfa-team.dfa-team"
-    },
-    "Profile_Pic": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "Clean_Sheets": {
       "type": "integer",
       "required": true,
