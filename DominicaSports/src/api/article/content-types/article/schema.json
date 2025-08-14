@@ -46,36 +46,6 @@
       "relation": "oneToOne",
       "target": "api::dfa-team.dfa-team"
     },
-    "daba_player": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::daba-player.daba-player"
-    },
-    "daba_team": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::daba-team.daba-team"
-    },
-    "dava_player": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::dava-player.dava-player"
-    },
-    "dava_team": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::dava-team.dava-team"
-    },
-    "dna_player": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::dna-player.dna-player"
-    },
-    "dna_team": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::dna-team.dna-team"
-    },
     "Headline": {
       "type": "enumeration",
       "enum": [
