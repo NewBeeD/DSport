@@ -62,6 +62,16 @@
     },
     "Game_Details": {
       "type": "json"
+    },
+    "dfa_team_home": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dfa-team.dfa-team"
+    },
+    "dfa_team_away": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dfa-team.dfa-team"
     }
   }
 }

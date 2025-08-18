@@ -1289,6 +1289,16 @@ export interface ApiFixtureFixture extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<'No'>;
     Game_Details: Attribute.JSON;
+    dfa_team_home: Attribute.Relation<
+      'api::fixture.fixture',
+      'oneToOne',
+      'api::dfa-team.dfa-team'
+    >;
+    dfa_team_away: Attribute.Relation<
+      'api::fixture.fixture',
+      'oneToOne',
+      'api::dfa-team.dfa-team'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
