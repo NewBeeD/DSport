@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Home_Team": {
-      "type": "string",
-      "required": true
-    },
-    "Away_Team": {
-      "type": "string",
-      "required": true
-    },
     "Date": {
       "type": "datetime",
       "required": true

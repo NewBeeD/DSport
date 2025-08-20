@@ -1267,8 +1267,6 @@ export interface ApiFixtureFixture extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Home_Team: Attribute.String & Attribute.Required;
-    Away_Team: Attribute.String & Attribute.Required;
     Date: Attribute.DateTime & Attribute.Required;
     Cancelled: Attribute.Enumeration<['Yes', 'No']> &
       Attribute.Required &
