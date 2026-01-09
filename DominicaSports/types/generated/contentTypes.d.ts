@@ -1471,10 +1471,12 @@ export interface ApiVideoVideo extends Schema.CollectionType {
   };
   attributes: {
     VideoId: Attribute.String & Attribute.Required;
-    Page_Location: Attribute.Enumeration<
+    Location: Attribute.Enumeration<
       ['Homepage1', 'Homepage2', 'Homepage3', 'Dfa1', 'Dfa2', 'Dfa3']
     > &
       Attribute.Required;
+    Title: Attribute.String;
+    Description: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
