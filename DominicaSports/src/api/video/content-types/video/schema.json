@@ -16,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "Page_Location": {
+    "Location": {
       "type": "enumeration",
       "enum": [
         "Homepage1",
@@ -27,6 +27,12 @@
         "Dfa3"
       ],
       "required": true
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
     }
   }
 }
