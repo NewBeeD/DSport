@@ -58,6 +58,10 @@
       "type": "integer",
       "required": true,
       "default": 0
+    },
+    "MOTM": {
+      "type": "integer",
+      "default": 0
     }
   }
 }
