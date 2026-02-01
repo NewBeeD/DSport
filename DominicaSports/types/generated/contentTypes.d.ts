@@ -1406,6 +1406,7 @@ export interface ApiPlayerStatPlayerStat extends Schema.CollectionType {
     Clean_Sheets: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<0>;
+    MOTM: Attribute.Integer & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
